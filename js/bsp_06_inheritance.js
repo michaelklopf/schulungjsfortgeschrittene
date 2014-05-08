@@ -39,3 +39,20 @@ var instance1 = new SuperType();
 instance1.colors.push("blau");
 
 console.log(instance1);
+
+// Call
+function Zweirad() {
+  this.colors = ["blau", "rot"];
+}
+
+function Fahrrad() {
+  Zweirad.call(this);
+}
+
+var inst1 = new Fahrrad();
+inst1.colors.push("gelb");
+
+console.log(inst1.colors);
+
+var inst2 = new Fahrrad();
+console.log(inst2.colors);
