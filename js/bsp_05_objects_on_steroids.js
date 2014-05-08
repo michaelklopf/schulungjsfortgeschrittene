@@ -44,6 +44,8 @@ machWasMitPerson(document); // geht auch obwohl anderer typ, das ist schlecht, d
 // Contructor-Pattern
 // Vorteil: Typ-Ueberpruefung moeglich
 // Nachteil: Methoden werden jedes Mal neu erstellt
+
+// Lösung: Methode außerhalb definieren
 var getName = function() {
     return this.name;
 };
@@ -72,3 +74,20 @@ if (p1 instanceof Object) {
     console.log("Ja.");
 }
 
+// Private Scope
+var AdvancedPerson = function() {
+  var farbe = '';
+
+  this.setFarbe = function(f) {
+    _farbe = f;
+  };
+
+  this.getFarbe = function() {
+    return _farbe;
+  }
+}
+
+var ap1 = new AdvancedPerson();
+console.log(ap1);
+ap1.setFarbe("blau");
+console.log(ap1.getFarbe());
