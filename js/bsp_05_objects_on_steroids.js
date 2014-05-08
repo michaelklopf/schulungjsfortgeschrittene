@@ -16,7 +16,7 @@ function printName(p) {
     console.log(p.name); // gibt alles aus, egal welches objekt
 }
 
-// Fabric Pattern
+// Factory-Pattern
 // Vorteil: simpel
 // Nachteil: keine typ Ueberpruefung moeglich
 function machePerson(n) {
@@ -39,8 +39,24 @@ function machWasMitPerson(p) {
 }
 
 machWasMitPerson(person1);
-machWasMitPerson(document); // geht auch, aber schlecht, darum anderes Pattern
+machWasMitPerson(document); // geht auch obwohl anderer typ, das ist schlecht, darum anderes Pattern
 
 // Contructor-Pattern
 // Vorteil: Typ-Ueberpruefung moeglich
-// Nachteil: 
+// Nachteil:
+var Person = function(pId) {
+    this.personalId = pId;
+};
+
+var p1 = new Person("Karl Mueller");
+
+console.log(p1);
+
+if (p1 instanceof Person) {
+    console.log("Ja.");
+}
+
+if (p1 instanceof Object) {
+    console.log("Ja.");
+}
+
