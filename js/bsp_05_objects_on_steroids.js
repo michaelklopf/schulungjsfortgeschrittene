@@ -42,3 +42,5 @@ machWasMitPerson(person1);
 machWasMitPerson(document); // geht auch, aber schlecht, darum anderes Pattern
 
 // Contructor-Pattern
+// Vorteil: Typ-Ueberpruefung moeglich
+// Nachteil: 
