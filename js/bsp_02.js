@@ -76,3 +76,56 @@ for (var key in assozArray) {
         console.log(key, ":", assozArray[key]);
     }
 }
+
+// -----------------
+// switch
+// -----------------
+var vergleichswert = 3;
+var status = 0;
+
+switch (vergleichswert) {
+    case 0:
+        console.log("Null");
+        status = 300;
+        break;
+    case 1:
+        console.log("Eins");
+        status = 400;
+        break;
+    case 2:
+        console.log("Zwei");
+        status = 500;
+        break;
+    default:
+        console.log("default");
+        status = 0;
+}
+// Hier mit status weiterarbeiten, die cases schlank halten.
+
+// -----------------
+// if
+// -----------------
+if (vergleichswert > 3) {
+    console.log("Ist groesser.");
+} else {
+    console.log("Ist kleiner.");
+}
+
+var v = vergleichswert < 1;
+
+if (v) {
+    //do something
+}
+
+if (vergleichswert == "3") {
+    // Gibt true
+}
+
+if (vergleichswert == "3tes") {
+    // Gibt false
+}
+
+// immer === verwenden
+if (vergleichswert === 3) {
+    // do something
+}

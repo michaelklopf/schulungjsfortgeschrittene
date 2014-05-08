@@ -66,3 +66,5 @@ machWasAnderes();
 
 // Die Dokumentation mit /* sollte unterlassen werden,
 // da sie zu Fehlern beim Auskommentieren von Code führen kann
+
+// Blockt ein Skript den Browser, packe es in einen Web Worker
