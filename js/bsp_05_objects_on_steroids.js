@@ -91,3 +91,18 @@ var ap1 = new AdvancedPerson();
 console.log(ap1);
 ap1.setFarbe("blau");
 console.log(ap1.getFarbe());
+
+// Prototype
+var ProtoPerson = function(pId, name) {
+    this.perId = pId;
+    this.name = name;
+};
+ProtoPerson.prototype.sagHallo = function() {
+  console.log("hallo hier ist meine Personal Id ", this.perId);
+}
+
+var anderePerson = new ProtoPerson("123", "Horst");
+anderePerson.sagHallo();
+
+var nochEiner = new ProtoPerson("456", "Franz");
+nochEiner.sagHallo();
