@@ -1,3 +1,4 @@
+// JS Basics
 console.log("bsp_01.js");
 
 // jshint for code analysis
@@ -63,3 +64,5 @@ function machWasAnderes() {
 
 machWasAnderes();
 
+// Die Dokumentation mit /* sollte unterlassen werden,
+// da sie zu Fehlern beim Auskommentieren von Code führen kann
