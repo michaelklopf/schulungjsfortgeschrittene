@@ -17,6 +17,8 @@ function printName(p) {
 }
 
 // Fabric Pattern
+// Vorteil: simpel
+// Nachteil: keine typ Ueberpruefung moeglich
 function machePerson(n) {
     var p = new Object();
     p.name = n;
@@ -25,3 +27,18 @@ function machePerson(n) {
 
 var person1 = machePerson("Hans");
 console.log(person1);
+
+function machWasMitPerson(p) {
+    if (typeof p == "object") {
+        console.log(p);
+    }
+
+    if (p instanceof Object) {
+        console.log(p);
+    }
+}
+
+machWasMitPerson(person1);
+machWasMitPerson(document); // geht auch, aber schlecht, darum anderes Pattern
+
+// Contructor-Pattern
