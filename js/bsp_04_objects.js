@@ -32,4 +32,3 @@ Object.defineProperty(person3, "name", {
 console.log(person3.name);
 person3.name = "Peter";
 console.log(person3.name);
-
