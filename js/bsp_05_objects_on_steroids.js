@@ -128,3 +128,13 @@ console.log(t1.name);
 
 t1.name = "Flipper";
 console.log(t1.name);
+
+console.log("Originalgehege ", t1.gehege);
+t1.gehege.push("Sumpf");
+console.log("geaendertes Gehege ", t1.gehege);
+
+var t2 = new Tier();
+t2.name = "Benjamin";
+
+console.log(t2);
+console.log(t2.gehege); // ist das gleiche Array wie bei Flipper, da beide die gleiche Referenz nutzen auf das Array
