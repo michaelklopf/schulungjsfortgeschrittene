@@ -2,7 +2,7 @@
 console.log("combination pattern");
 
 var ModernPerson = function(name, alter) {
-  // der Part sorgt dafuer das jedes Objekt seine eigenen Variablen erhaelt
+  // der Part sorgt dafuer, dass jedes Objekt seine eigenen Variablen erhaelt
   this.name = name;
   this.alter = alter;
   this.projekte = ["02", "03"];
