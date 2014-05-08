@@ -55,3 +55,18 @@ function getSomething() {
 var something = getSomething();
 console.log(something);
 
+// ----------------
+// closure - das ist besser
+// ----------------
+function assignHandler() {
+    var element = document.getElementById("button1");
+    var id = element.id;
+
+    element.onclick = function() {
+        console.log("id", id);
+    };
+
+    element = null; // Der gute Teil
+}
+
+assignHandler();
