@@ -48,7 +48,13 @@ for (i=myArray.length; i > 0; i -= 1) {
     console.log(myArray[i-1]);
 }
 
+// for-in Schleifen
+var assozArray = {
+    wert1: "Salami",
+    wert2: "Käse"
+};
 
-
-
-
+console.log(assozArray);
+for (var key in assozArray) {
+    console.log(key, ":", assozArray[key]);
+}
