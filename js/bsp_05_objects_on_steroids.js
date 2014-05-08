@@ -93,6 +93,8 @@ ap1.setFarbe("blau");
 console.log(ap1.getFarbe());
 
 // Prototype
+// Nur Funktionen koennen dies nutzen
+// Objekte haben keine Prototyp Funktionalitaet
 var ProtoPerson = function(pId, name) {
     this.perId = pId;
     this.name = name;
@@ -106,3 +108,23 @@ anderePerson.sagHallo();
 
 var nochEiner = new ProtoPerson("456", "Franz");
 nochEiner.sagHallo();
+
+// siehe http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/
+
+// weiteres Beispiel
+var Tier = function() {};
+
+Tier.prototype = {
+  name : "Name nicht vergeben.",
+  alter : 0,
+  gehege : ["Tropenhaus", "Wasserbecken"],
+  getDaten : function() {
+    return this.name + " (" + this.alter + ")";
+  }
+};
+
+var t1 = new Tier();
+console.log(t1.name);
+
+t1.name = "Flipper";
+console.log(t1.name);
