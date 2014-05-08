@@ -23,3 +23,13 @@ var person2 = {
 // enumerable
 // value
 // writable
+var person3 = {};
+Object.defineProperty(person3, "name", {
+    writable : true,    // wenn true dann laesst sich der value abaendern
+    value : "Mischa"
+});
+
+console.log(person3.name);
+person3.name = "Peter";
+console.log(person3.name);
+
