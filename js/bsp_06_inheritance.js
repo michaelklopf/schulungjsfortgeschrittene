@@ -24,3 +24,18 @@ var meinAuto = new Auto();
 console.log(meinAuto);
 var meinLkw = new LKW();
 console.log(meinLkw);
+
+// weiteres Beispiel:
+function SuperType() {
+  this.colors = ["rot", "grün"];
+}
+
+function SubType() {
+}
+
+SubType.prototype = new SuperType();
+
+var instance1 = new SuperType();
+instance1.colors.push("blau");
+
+console.log(instance1);
