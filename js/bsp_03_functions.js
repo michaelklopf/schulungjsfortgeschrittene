@@ -66,6 +66,7 @@ function assignHandler() {
         console.log("id", id);
     };
 
+    // Referenzen zuruecksetzen und Speicher freigeben
     element = null; // Der gute Teil
 }
 
