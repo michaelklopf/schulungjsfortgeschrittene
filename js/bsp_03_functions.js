@@ -17,10 +17,41 @@ function logSomething() {
     console.log("something");
 }
 
-// Dies kann wie folgt unterbunden werden
+// Dies kann wie folgt unterbunden werden mit "Funktionsausdruck"
 var logSomethingElse = function() {
     console.log("somethingElse");
 }; // man beachte das Semikolon
 
 logSomethingElse();
+
+// ------------------
+// Scope / Private / IIFE - Immediately-invoked function expression
+// ------------------
+var b = 5;
+
+(function() {
+    var a;  // Private
+    if (true) { // if steht hier, weil vorher klargestellt werden soll, dass es keinen Scope bei if gibt
+        a = 2;
+        b = b + 2
+    }
+})();
+
+// ----------------
+// closure - der schlechte Teil
+// ----------------
+function getSomething() {
+    'use strict';
+
+    var a = "Something";
+
+    var  getSomethingElse = function () {
+        return a;
+    };
+
+    return getSomethingElse();
+}
+
+var something = getSomething();
+console.log(something);
 
