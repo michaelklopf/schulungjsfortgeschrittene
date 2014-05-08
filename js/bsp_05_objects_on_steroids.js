@@ -43,14 +43,26 @@ machWasMitPerson(document); // geht auch obwohl anderer typ, das ist schlecht, d
 
 // Contructor-Pattern
 // Vorteil: Typ-Ueberpruefung moeglich
-// Nachteil:
-var Person = function(pId) {
-    this.personalId = pId;
+// Nachteil: Methoden werden jedes Mal neu erstellt
+var getName = function() {
+    return this.name;
 };
 
-var p1 = new Person("Karl Mueller");
+var Person = function(pId, name) {
+    this.personalId = pId;
+    this.name = name;
+    this.getPerId = function() {
+        return this.personalId;
+    };
+    this.getName = getName;
+};
+
+var p1 = new Person("1234", "Karl Mueller");
+var p2 = new Person("5678", "Hans Dampf");
 
 console.log(p1);
+console.log(p1.getPerId());
+console.log(p2.getName());
 
 if (p1 instanceof Person) {
     console.log("Ja.");
