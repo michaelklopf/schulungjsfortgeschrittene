@@ -46,6 +46,7 @@ function Zweirad() {
 }
 
 function Fahrrad() {
+  // Constructor stealing
   Zweirad.call(this);
 }
 
@@ -56,3 +57,22 @@ console.log(inst1.colors);
 
 var inst2 = new Fahrrad();
 console.log(inst2.colors);
+
+// Mehr
+function Vehicle() {
+  this.colors = ["blau", "rot"];
+}
+
+Vehicle.prototype.start = function() {
+  console.log("Wrrooom");
+}
+
+function Car() {
+  Vehicle.call(this);
+}
+
+Car.prototype = new Vehicle();
+
+var car1 = new Car();
+car1.colors.push("pink");
+car1.start();
