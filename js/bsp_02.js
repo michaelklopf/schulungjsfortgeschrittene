@@ -12,7 +12,7 @@ for (var i = 0; i < myArray.length; i++ ) {
     console.log(myArray[i]);
 }
 
-// der klassische for schleifen Durchlauf ist unperformant und ein suboptimales Pattern
+// der Klassische for-Schleifen Durchlauf ist unperformant und ein suboptimales Pattern
 
 // ----------------
 // Besseres Pattern
@@ -33,7 +33,22 @@ for (i = 0, max = myArray.length; i < max; i++) {
 var i; // Iterator
 
 // noch performanter
-for (i=myArray.length;i--;) {
+for (i=myArray.length; i--;) {   // dies wird von JSLint bemängelt
     console.log(myArray[i]);
 }
+
+// Alternative, die aber nicht will. Der Iterator hat die Werte 2,1 aber bei myArray[2]
+// erhalten wir undefined
+for (i=myArray.length; i -= 1;) {
+    console.log(myArray[i]);
+}
+
+// So geht es aber, ist dies jedoch performanter?
+for (i=myArray.length; i > 0; i -= 1) {
+    console.log(myArray[i-1]);
+}
+
+
+
+
 
