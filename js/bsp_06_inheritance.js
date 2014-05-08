@@ -58,21 +58,30 @@ console.log(inst1.colors);
 var inst2 = new Fahrrad();
 console.log(inst2.colors);
 
-// Mehr
-function Vehicle() {
+// ----------------
+// Parasitic Combination Inheritance
+// ----------------
+function Vehicle(srn) {
+  this.serialnumber = srn;
   this.colors = ["blau", "rot"];
 }
 
+// Prototyp-Chaining 1
 Vehicle.prototype.start = function() {
   console.log("Wrrooom");
 }
 
-function Car() {
-  Vehicle.call(this);
+function Car(srn) {
+  Vehicle.call(this, srn);
 }
 
+// Prototyp-Chaining 2
 Car.prototype = new Vehicle();
 
-var car1 = new Car();
+var car1 = new Car("93248234");
 car1.colors.push("pink");
+console.log(car1.serialnumber);
 car1.start();
+
+var car2 = new Car("748382284");
+console.log(car2.serialnumber);
