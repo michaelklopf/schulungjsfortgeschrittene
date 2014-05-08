@@ -48,7 +48,9 @@ for (i=myArray.length; i > 0; i -= 1) {
     console.log(myArray[i-1]);
 }
 
+// -----------------
 // for-in Schleifen
+// -----------------
 var assozArray = {
     wert1: "Salami",
     wert2: "Käse"
@@ -57,4 +59,20 @@ var assozArray = {
 console.log(assozArray);
 for (var key in assozArray) {
     console.log(key, ":", assozArray[key]);
+}
+
+if (typeof  Object.prototype.clone === "undefined") {
+    Object.prototype.clone = function() {};
+}
+
+// In folgender Ausgabe tauchen auch die durch prototype hinzugefuegten Eigenschaften auf
+for (var key in assozArray) {
+    console.log(key, ":", assozArray[key]);
+}
+
+// Hier filtern wir nur nach den gewuenschten Eigenschaften
+for (var key in assozArray) {
+    if (assozArray.hasOwnProperty(key)) {
+        console.log(key, ":", assozArray[key]);
+    }
 }
