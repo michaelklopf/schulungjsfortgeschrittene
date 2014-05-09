@@ -32,3 +32,20 @@ if (typeof App === "undefined") {
 
   App.modul = {};
 })();
+
+// So exportieren wir unsere gekapselten Daten
+var anonym = (function($) {
+  var App = {};
+
+  App.Fahrzeug = function() {};
+  App.Auto = function() {};
+
+  App.modul = {
+  };
+
+  App.a = "Hallo";
+
+  return App;
+})(jQuery);
+
+console.log(anonym.a);
