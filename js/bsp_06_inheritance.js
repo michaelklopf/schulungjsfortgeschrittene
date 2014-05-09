@@ -69,7 +69,7 @@ function Vehicle(srn) {
 // Prototyp-Chaining 1
 Vehicle.prototype.start = function() {
   console.log("Wrrooom");
-}
+};
 
 function Car(srn) {
   Vehicle.call(this, srn);
